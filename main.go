@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/abhhi003/rss-aggregator/internal/database"
@@ -21,6 +22,7 @@ type apiConfig struct {
 
 func main() {
 	godotenv.Load(".env")
+	configureLogging()
 
 	portString := os.Getenv("PORT")
 	if portString == "" {
@@ -43,7 +45,12 @@ func main() {
 	}
 
 	//background job for fetching posts from rss
-	go startScrapping(db, 10, time.Minute)
+	timeInMin, err := strconv.Atoi(os.Getenv("SCRAP_INTERVAL_IN_MIN"))
+	if err != nil {
+		log.Printf("Counldn't read SCRAP_INTERVAL_IN_MIN value: %v", err)
+	}
+	log.Printf("💡 Updating feeds after every %v minutes", timeInMin)
+	go startScrapping(db, 10, time.Duration(timeInMin)*time.Minute)
 
 	router := chi.NewRouter()
 
@@ -83,11 +90,15 @@ func main() {
 		Addr:    ":" + portString,
 	}
 
-	log.Printf("Server started on port %v", portString)
+	log.Printf("⚡ Server started on port %v", portString)
 	err = srv.ListenAndServe()
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	fmt.Println("PORT :", portString)
+}
+
+func Minute(i int) {
+	panic("unimplemented")
 }

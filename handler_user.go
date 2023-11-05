@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
+	"strconv"
 	"time"
 
 	"github.com/abhhi003/rss-aggregator/internal/database"
@@ -45,9 +47,13 @@ func (apiCfg *apiConfig) handlerGetUser(w http.ResponseWriter, r *http.Request, 
 }
 
 func (apiCfg *apiConfig) handlerGetPostsForUser(w http.ResponseWriter, r *http.Request, user database.User) {
+	limit, err := strconv.Atoi(os.Getenv("LIMIT"))
+	if err != nil {
+		respondWithError(w, 400, fmt.Sprintf("Counldn't read limit value: %v", err))
+	}
 	posts, err := apiCfg.DB.GetPostsForUser(r.Context(), database.GetPostsForUserParams{
 		UserID: user.ID,
-		Limit:  10,
+		Limit:  int32(limit),
 	})
 
 	if err != nil {
