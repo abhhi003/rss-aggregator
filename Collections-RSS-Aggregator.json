@@ -1,0 +1,157 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "RSS-Aggregator",
+    "dateExported": "2023-11-05T15:56:51.087Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "a546325e-0af0-4346-a908-b52e356f0885",
+            "colId": "d9011456-92b6-4aa5-8aa7-bfb9cba8de6e",
+            "containerId": "",
+            "name": "GET Feed Follows",
+            "url": "http://localhost:8001/v1/feed_follows",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-05T15:54:14.439Z",
+            "modified": "2023-11-05T15:54:14.439Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey ee3acb7ce1edf1c82b2e4a45de946325b84b8e8018c9ac25eec2e3f54d167524"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7654925c-b493-45f2-92f3-9397896a8335",
+            "colId": "d9011456-92b6-4aa5-8aa7-bfb9cba8de6e",
+            "containerId": "",
+            "name": "POST Users",
+            "url": "http://localhost:8001/v1/users",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-11-05T15:54:40.865Z",
+            "modified": "2023-11-05T15:54:40.865Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"Name\": \"Abhishek Kumar\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2801bcf8-9adc-4604-9638-7ab09ff4f525",
+            "colId": "d9011456-92b6-4aa5-8aa7-bfb9cba8de6e",
+            "containerId": "",
+            "name": "GET Users",
+            "url": "http://localhost:8001/v1/users",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-05T15:55:00.902Z",
+            "modified": "2023-11-05T15:55:00.902Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey ee3acb7ce1edf1c82b2e4a45de946325b84b8e8018c9ac25eec2e3f54d167524"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5b22a123-6a1c-4158-9f7d-46502a3e782d",
+            "colId": "d9011456-92b6-4aa5-8aa7-bfb9cba8de6e",
+            "containerId": "",
+            "name": "GET Feeds",
+            "url": "http://localhost:8001/v1/feeds",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-11-05T15:55:14.278Z",
+            "modified": "2023-11-05T15:55:14.278Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey ee3acb7ce1edf1c82b2e4a45de946325b84b8e8018c9ac25eec2e3f54d167524"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Wags Land\",\n  \"url\": \"https://wagslane.dev/index.xml\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "25c0769b-99d9-40df-b0dc-b7954e21180a",
+            "colId": "d9011456-92b6-4aa5-8aa7-bfb9cba8de6e",
+            "containerId": "",
+            "name": "POST Feeds",
+            "url": "http://localhost:8001/v1/feeds",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-11-05T15:55:28.037Z",
+            "modified": "2023-11-05T15:55:28.037Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey ee3acb7ce1edf1c82b2e4a45de946325b84b8e8018c9ac25eec2e3f54d167524"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Garbage blog\",\n  \"url\": \"https://example.com/index.xml\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fc732ec3-8ace-4634-a2f3-83583fc1bfbf",
+            "colId": "d9011456-92b6-4aa5-8aa7-bfb9cba8de6e",
+            "containerId": "",
+            "name": "POST Feed Follows",
+            "url": "http://localhost:8001/v1/feed_follows",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-11-05T15:55:46.027Z",
+            "modified": "2023-11-05T15:55:46.027Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey ee3acb7ce1edf1c82b2e4a45de946325b84b8e8018c9ac25eec2e3f54d167524"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"feed_id\": \"1e0f3625-542c-4399-8abb-c16df39cd03c\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "be1c241e-56e0-485a-b448-32a632d7dd1c",
+            "colId": "d9011456-92b6-4aa5-8aa7-bfb9cba8de6e",
+            "containerId": "",
+            "name": "GET Posts",
+            "url": "http://localhost:8001/v1/posts",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-11-05T15:56:10.540Z",
+            "modified": "2023-11-05T15:56:10.540Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey ee3acb7ce1edf1c82b2e4a45de946325b84b8e8018c9ac25eec2e3f54d167524"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
